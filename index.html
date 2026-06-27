@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabilur Rashad — Memorization & Islamic Studies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        /* outline: 1px solid red; */
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --green-deep: #1a3a2a;
+        --green-mid: #2a5240;
+        --green-light: #3d7a5c;
+        --gold: #c9a84c;
+        --gold-light: #e8c97a;
+        --parchment: #f8f3e8;
+        --cream: #ede8d8;
+        --white: #fdfaf4;
+        --ink: #1c1c1c;
+        --ink-soft: #3a3a3a;
+        --ink-muted: #6b6b5a;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--parchment);
+        color: var(--ink);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        height: 68px;
+        background: rgba(26, 58, 42, 0.96);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+      }
+
+      .logo-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .imageLogo {
+        width: 4vw;
+        height: 4vw;
+        margin-right: 1.2vw;
+      }
+
+      @media (max-width: 768px) {
+        .imageLogo {
+          width: 8vw;
+          height: 8vw;
+          margin-right: 2vw;
+        }
+      }
+
+      .nav-logo {
+        font-family: "Amiri", serif;
+        font-size: 1.25rem;
+        color: var(--gold-light);
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: rgba(253, 250, 244, 0.8);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold-light);
+      }
+
+      .nav-cta {
+        background: var(--gold);
+        color: var(--green-deep) !important;
+        padding: 0.45rem 1.1rem;
+        border-radius: 3px;
+        font-weight: 600 !important;
+      }
+
+      .nav-cta:hover {
+        background: var(--gold-light);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: var(--green-deep);
+        padding: 120px 5% 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Geometric background pattern */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          repeating-linear-gradient(
+            60deg,
+            rgba(201, 168, 76, 0.04) 0px,
+            rgba(201, 168, 76, 0.04) 1px,
+            transparent 1px,
+            transparent 60px
+          ),
+          repeating-linear-gradient(
+            -60deg,
+            rgba(201, 168, 76, 0.04) 0px,
+            rgba(201, 168, 76, 0.04) 1px,
+            transparent 1px,
+            transparent 60px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(201, 168, 76, 0.03) 0px,
+            rgba(201, 168, 76, 0.03) 1px,
+            transparent 1px,
+            transparent 60px
+          );
+        pointer-events: none;
+      }
+
+      .hero-frame {
+        position: relative;
+        max-width: 760px;
+        padding: 60px 50px;
+        border: 1px solid rgba(201, 168, 76, 0.3);
+      }
+
+      .hero-frame::before,
+      .hero-frame::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-color: var(--gold);
+        border-style: solid;
+      }
+      .hero-frame::before {
+        top: -1px;
+        left: -1px;
+        border-width: 2px 0 0 2px;
+      }
+      .hero-frame::after {
+        bottom: -1px;
+        right: -1px;
+        border-width: 0 2px 2px 0;
+      }
+
+      .hero-bismillah {
+        font-family: "Amiri", serif;
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        color: var(--gold-light);
+        margin-bottom: 0.6rem;
+        letter-spacing: 0.04em;
+        direction: rtl;
+      }
+
+      .hero-sub-arabic {
+        font-family: "Amiri", serif;
+        font-size: 1rem;
+        color: rgba(201, 168, 76, 0.6);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        font-style: italic;
+      }
+
+      /* Arabesque divider inline SVG */
+      .arabesque {
+        display: block;
+        margin: 0 auto 2rem;
+        width: 240px;
+        height: 24px;
+        opacity: 0.7;
+      }
+
+      .hero h1 {
+        font-family: "Amiri", serif;
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
+        color: var(--white);
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero h1 span {
+        color: var(--gold);
+      }
+
+      .hero-tagline {
+        font-size: clamp(0.9rem, 2vw, 1.05rem);
+        color: rgba(253, 250, 244, 0.65);
+        max-width: 500px;
+        margin: 1.2rem auto 2.4rem;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+      }
+
+      .hero-cta-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: var(--gold);
+        color: var(--green-deep);
+        padding: 0.85rem 2.2rem;
+        border: none;
+        border-radius: 3px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        background: var(--gold-light);
+        transform: translateY(-1px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        padding: 0.85rem 2.2rem;
+        border: 1px solid rgba(253, 250, 244, 0.4);
+        border-radius: 3px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+        display: inline-block;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold-light);
+      }
+
+      /* Scroll indicator */
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        color: rgba(201, 168, 76, 0.5);
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .scroll-hint-line {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(
+          to bottom,
+          rgba(201, 168, 76, 0.5),
+          transparent
+        );
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* ── SECTION SHARED ── */
+      section {
+        padding: 90px 5%;
+      }
+
+      .section-eyebrow {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.8rem;
+        display: block;
+      }
+
+      .section-title {
+        font-family: "Amiri", serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        color: var(--green-deep);
+        line-height: 1.2;
+        margin-bottom: 1.4rem;
+      }
+
+      .section-body {
+        font-size: 1rem;
+        color: var(--ink-soft);
+        line-height: 1.75;
+        max-width: 640px;
+      }
+
+      .gold-divider {
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: var(--gold);
+        margin: 1.4rem 0;
+      }
+
+      /* ── VISION & MISSION ── */
+      #vision-mission {
+        background: var(--white);
+      }
+
+      .vm-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .vm-card {
+        padding: 2.8rem;
+        border: 1px solid var(--cream);
+        background: var(--parchment);
+        position: relative;
+      }
+
+      .vm-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 60px;
+        background: var(--gold);
+      }
+
+      .vm-card h3 {
+        font-family: "Amiri", serif;
+        font-size: 1.5rem;
+        color: var(--green-deep);
+        margin-bottom: 0.3rem;
+      }
+
+      .vm-card p {
+        font-size: 0.95rem;
+        color: var(--ink-soft);
+        line-height: 1.8;
+      }
+
+      /* ── PROGRAMS ── */
+      #programs {
+        background: var(--green-deep);
+      }
+
+      #programs .section-title {
+        color: var(--white);
+      }
+      #programs .section-body {
+        color: rgba(253, 250, 244, 0.7);
+      }
+
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 3rem auto 0;
+      }
+
+      .program-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        padding: 2rem 1.8rem;
+        transition:
+          background 0.25s,
+          border-color 0.25s;
+      }
+
+      .program-card:hover {
+        background: rgba(201, 168, 76, 0.08);
+        border-color: rgba(201, 168, 76, 0.5);
+      }
+
+      .program-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(201, 168, 76, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+      }
+
+      .program-icon svg {
+        width: 22px;
+        height: 22px;
+        fill: var(--gold);
+      }
+
+      .program-card h4 {
+        font-family: "Amiri", serif;
+        font-size: 1.15rem;
+        color: var(--gold-light);
+        margin-bottom: 0.6rem;
+      }
+
+      .program-card p {
+        font-size: 0.88rem;
+        color: rgba(253, 250, 244, 0.6);
+        line-height: 1.7;
+      }
+
+      /* ── VALUES ── */
+      #values {
+        background: var(--cream);
+      }
+
+      .values-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .values-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+      }
+
+      .values-list li {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .val-num {
+        font-family: "Amiri", serif;
+        font-size: 1.5rem;
+        color: var(--gold);
+        line-height: 1;
+        min-width: 28px;
+      }
+
+      .val-text strong {
+        display: block;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--green-deep);
+        margin-bottom: 0.15rem;
+      }
+
+      .val-text span {
+        font-size: 0.875rem;
+        color: var(--ink-muted);
+        line-height: 1.6;
+      }
+
+      .values-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Geometric star ornament */
+      .star-ornament {
+        width: 280px;
+        height: 280px;
+        opacity: 0.9;
+      }
+
+      /* ── ADMISSIONS BANNER ── */
+      #admissions {
+        background: var(--gold);
+        padding: 70px 5%;
+        text-align: center;
+      }
+
+      #admissions h2 {
+        font-family: "Amiri", serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        color: var(--green-deep);
+        margin-bottom: 0.8rem;
+      }
+
+      #admissions p {
+        color: rgba(26, 58, 42, 0.75);
+        font-size: 1rem;
+        max-width: 500px;
+        margin: 0 auto 2rem;
+      }
+
+      .btn-dark {
+        background: var(--green-deep);
+        color: var(--gold);
+        padding: 0.9rem 2.4rem;
+        border: none;
+        border-radius: 3px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+
+      .btn-dark:hover {
+        background: var(--green-mid);
+      }
+
+      /* ── CONTACT ── */
+      #contact {
+        background: var(--white);
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: start;
+      }
+
+      .contact-detail {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--cream);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .contact-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--green-mid);
+      }
+
+      .contact-detail h4 {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        margin-bottom: 0.2rem;
+      }
+
+      .contact-detail a,
+      .contact-detail p {
+        font-size: 0.95rem;
+        color: var(--green-mid);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-detail a:hover {
+        color: var(--gold);
+      }
+
+      /* Contact form */
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .form-group label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        background: var(--parchment);
+        border: 1px solid var(--cream);
+        border-radius: 3px;
+        padding: 0.75rem 1rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: var(--ink);
+        outline: none;
+        transition: border-color 0.2s;
+        resize: none;
+        width: 100%;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--green-mid);
+      }
+
+      .contact-form .btn-primary {
+        align-self: flex-start;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--green-deep);
+        padding: 3rem 5%;
+        text-align: center;
+        border-top: 1px solid rgba(201, 168, 76, 0.2);
+      }
+
+      .footer-logo {
+        font-family: "Amiri", serif;
+        font-size: 1.4rem;
+        color: var(--gold-light);
+        margin-bottom: 0.6rem;
+      }
+
+      .footer-note {
+        font-size: 0.8rem;
+        color: rgba(253, 250, 244, 0.4);
+        letter-spacing: 0.06em;
+      }
+
+      .footer-arabic {
+        font-family: "Amiri", serif;
+        font-size: 1rem;
+        color: rgba(201, 168, 76, 0.5);
+        margin-top: 0.4rem;
+        direction: rtl;
+      }
+
+      /* ── ANIMATIONS ── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .fade-up.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 800px) {
+        .nav-links {
+          display: none;
+        }
+        .vm-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .values-layout {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .values-visual {
+          display: none;
+        }
+        .contact-layout {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .hero-frame {
+          padding: 40px 28px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-up {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .scroll-hint-line {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── NAV ── -->
+    <nav>
+      <div class="logo-container">
+        <img class="imageLogo" src="./madarasaLogo.jpeg" alt="" />
+        <a href="#" class="nav-logo">Sabilur Rashad</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#vision-mission">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#contact" class="nav-cta">Enrol Now</a></li>
+      </ul>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="home">
+      <div class="hero-frame">
+        <div class="hero-bismillah">
+          بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+        </div>
+        <div class="hero-sub-arabic">
+          In the name of Allah, the Most Gracious, the Most Merciful
+        </div>
+
+        <!-- Arabesque SVG divider — signature element -->
+        <svg
+          class="arabesque"
+          viewBox="0 0 240 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" stroke="#C9A84C" stroke-width="0.8">
+            <line x1="0" y1="12" x2="80" y2="12" />
+            <line x1="160" y1="12" x2="240" y2="12" />
+            <!-- 8-pointed star at center -->
+            <polygon
+              points="120,4 122.8,9.2 128.5,9.5 124.4,13.6 125.7,19.2 120,16.4 114.3,19.2 115.6,13.6 111.5,9.5 117.2,9.2"
+              fill="#C9A84C"
+              opacity="0.8"
+            />
+            <!-- small diamonds flanking -->
+            <polygon
+              points="95,12 99,8 103,12 99,16"
+              fill="#C9A84C"
+              opacity="0.4"
+            />
+            <polygon
+              points="137,12 141,8 145,12 141,16"
+              fill="#C9A84C"
+              opacity="0.4"
+            />
+            <!-- tiny dots -->
+            <circle cx="85" cy="12" r="1.5" fill="#C9A84C" opacity="0.5" />
+            <circle cx="155" cy="12" r="1.5" fill="#C9A84C" opacity="0.5" />
+          </g>
+        </svg>
+
+        <h1>Sabilur <span>Rashad</span></h1>
+        <p class="hero-tagline">
+          School for Memorization &amp; Islamic Studies — nurturing scholars,
+          building character, serving humanity.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#admissions" class="btn-primary">Begin Enrolment</a>
+          <a href="#programs" class="btn-outline">Explore Programs</a>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <div class="scroll-hint-line"></div>
+        Discover
+      </div>
+    </section>
+
+    <!-- ── VISION & MISSION ── -->
+    <section id="vision-mission">
+      <div class="vm-grid">
+        <div class="vm-card fade-up">
+          <span class="section-eyebrow">Our Vision</span>
+          <h3>A leading light in Islamic education</h3>
+          <span class="gold-divider"></span>
+          <p>
+            To be a leading Islamic educational institution dedicated to
+            nurturing knowledgeable, morally upright, and responsible
+            individuals who excel academically while upholding the teachings of
+            Islam for the benefit of humanity.
+          </p>
+        </div>
+        <div class="vm-card fade-up" style="transition-delay: 0.15s">
+          <span class="section-eyebrow">Our Mission</span>
+          <h3>Education rooted in Qur'an &amp; Sunnah</h3>
+          <span class="gold-divider"></span>
+          <p>
+            To provide quality education rooted in the Qur'an, Sunnah, and sound
+            academic standards — instilling taqwa, good character, and balanced
+            intellectual, spiritual, social, and physical development in every
+            student.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROGRAMS ── -->
+    <section id="programs">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <span class="section-eyebrow">What We Offer</span>
+        <h2 class="section-title fade-up">Programs &amp; Pathways</h2>
+        <p class="section-body fade-up">
+          A balanced curriculum that honours Islamic tradition while equipping
+          students for the world — from Qur'anic memorisation to contemporary
+          academic excellence.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card fade-up">
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+              />
+            </svg>
+          </div>
+          <h4>Qur'an Memorisation (Hifdh)</h4>
+          <p>
+            Structured hifdhul Qur'an programme with qualified huffadh, tajweed
+            instruction, and regular revision sessions.
+          </p>
+        </div>
+        <div class="program-card fade-up" style="transition-delay: 0.1s">
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 14H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V6h8v2z"
+              />
+            </svg>
+          </div>
+          <h4>Islamic Studies</h4>
+          <p>
+            Comprehensive study of Fiqh, Aqeedah, Seerah, Hadith sciences, and
+            Arabic language from qualified scholars.
+          </p>
+        </div>
+        <div class="program-card fade-up" style="transition-delay: 0.2s">
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
+              />
+            </svg>
+          </div>
+          <h4>Academic Education</h4>
+          <p>
+            Core academic subjects aligned to national standards — mathematics,
+            sciences, English, and social studies.
+          </p>
+        </div>
+        <div class="program-card fade-up" style="transition-delay: 0.3s">
+          <div class="program-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+              />
+            </svg>
+          </div>
+          <h4>Character Development</h4>
+          <p>
+            Dedicated pastoral care, Islamic ethics workshops, community
+            service, and mentorship for holistic growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VALUES ── -->
+    <section id="values">
+      <div class="values-layout">
+        <div>
+          <span class="section-eyebrow">Our Commitments</span>
+          <h2 class="section-title fade-up">What guides us</h2>
+          <span class="gold-divider"></span>
+          <ul class="values-list">
+            <li class="fade-up">
+              <span class="val-num">١</span>
+              <div class="val-text">
+                <strong>Excellence in Deen &amp; Dunya</strong>
+                <span
+                  >Promoting achievement in both Islamic and conventional
+                  education — neither at the expense of the other.</span
+                >
+              </div>
+            </li>
+            <li class="fade-up" style="transition-delay: 0.1s">
+              <span class="val-num">٢</span>
+              <div class="val-text">
+                <strong>Taqwa as Foundation</strong>
+                <span
+                  >Every lesson, every interaction, every policy is grounded in
+                  the consciousness of Allah.</span
+                >
+              </div>
+            </li>
+            <li class="fade-up" style="transition-delay: 0.2s">
+              <span class="val-num">٣</span>
+              <div class="val-text">
+                <strong>Responsible Leadership</strong>
+                <span
+                  >Preparing students to lead with integrity and serve their
+                  communities as positive contributors.</span
+                >
+              </div>
+            </li>
+            <li class="fade-up" style="transition-delay: 0.3s">
+              <span class="val-num">٤</span>
+              <div class="val-text">
+                <strong>Safe &amp; Inspiring Environment</strong>
+                <span
+                  >A disciplined, nurturing campus that fosters lifelong
+                  learning and personal growth.</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Geometric Islamic star ornament — hand-crafted SVG -->
+        <div class="values-visual fade-up">
+          <svg
+            class="star-ornament"
+            viewBox="0 0 280 280"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <radialGradient id="starGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.25" />
+                <stop offset="100%" stop-color="#C9A84C" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="140" cy="140" r="130" fill="url(#starGrad)" />
+            <!-- Outer ring dots -->
+            <g fill="#C9A84C" opacity="0.3">
+              <circle cx="140" cy="22" r="3" />
+              <circle cx="191" cy="37" r="2" />
+              <circle cx="234" cy="75" r="2" />
+              <circle cx="253" cy="130" r="3" />
+              <circle cx="238" cy="185" r="2" />
+              <circle cx="198" cy="222" r="2" />
+              <circle cx="140" cy="238" r="3" />
+              <circle cx="85" cy="225" r="2" />
+              <circle cx="44" cy="188" r="2" />
+              <circle cx="26" cy="132" r="3" />
+              <circle cx="42" cy="78" r="2" />
+              <circle cx="83" cy="40" r="2" />
+            </g>
+            <!-- 12-pointed star -->
+            <g fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6">
+              <!-- outer hexagon rotated 0 -->
+              <polygon
+                points="140,30 168,75 218,75 246,120 218,165 168,165 140,210 112,165 62,165 34,120 62,75 112,75"
+              />
+              <!-- outer hexagon rotated 30 -->
+              <polygon
+                points="140,40 175,85 200,100 215,140 200,180 175,195 140,220 105,195 80,180 65,140 80,100 105,85"
+              />
+            </g>
+            <!-- inner 8-pointed star -->
+            <g fill="#C9A84C" opacity="0.15">
+              <polygon
+                points="140,80 153,115 188,115 160,136 170,172 140,152 110,172 120,136 92,115 127,115"
+              />
+            </g>
+            <g fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.8">
+              <polygon
+                points="140,80 153,115 188,115 160,136 170,172 140,152 110,172 120,136 92,115 127,115"
+              />
+            </g>
+            <!-- centre circle -->
+            <circle
+              cx="140"
+              cy="140"
+              r="18"
+              fill="none"
+              stroke="#C9A84C"
+              stroke-width="1.2"
+              opacity="0.7"
+            />
+            <circle cx="140" cy="140" r="6" fill="#C9A84C" opacity="0.5" />
+            <!-- four cardinal lines -->
+            <g stroke="#C9A84C" stroke-width="0.6" opacity="0.35">
+              <line x1="140" y1="30" x2="140" y2="60" />
+              <line x1="140" y1="220" x2="140" y2="250" />
+              <line x1="30" y1="140" x2="60" y2="140" />
+              <line x1="220" y1="140" x2="250" y2="140" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ADMISSIONS BANNER ── -->
+    <section id="admissions">
+      <h2 class="fade-up">Enrolment Now Open</h2>
+      <p class="fade-up">
+        Secure your child's place in a school where faith and knowledge flourish
+        together. Spaces are limited.
+      </p>
+      <a
+        href="mailto:Sabilurrashad3@gmail.com?subject=Admissions%20Enquiry"
+        class="btn-dark fade-up"
+        >Apply via Email</a
+      >
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+      <div class="contact-layout">
+        <div>
+          <span class="section-eyebrow">Get in Touch</span>
+          <h2 class="section-title fade-up">We'd love to hear from you</h2>
+          <span class="gold-divider"></span>
+          <p class="section-body fade-up" style="margin-bottom: 2.5rem">
+            Whether you have questions about admissions, our curriculum, or wish
+            to visit the school — reach out and our team will respond promptly,
+            in sha Allah.
+          </p>
+
+          <div class="contact-detail fade-up">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Email Address</h4>
+              <a href="mailto:Sabilurrashad3@gmail.com"
+                >Sabilurrashad3@gmail.com</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-detail fade-up">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>Nigeria — contact us for the full address</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up">
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Ahmad" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Usman" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                placeholder="Admissions enquiry"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Write your message here…"
+              ></textarea>
+            </div>
+            <button class="btn-primary" onclick="handleFormSubmit(event)">
+              Send Message
+            </button>
+            <p
+              id="form-feedback"
+              style="
+                font-size: 0.85rem;
+                color: var(--green-mid);
+                display: none;
+                margin-top: 0.5rem;
+              "
+            ></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-logo">Sabilur Rashad</div>
+      <div class="footer-arabic">سبيل الرشاد للحفظ والدراسات الإسلامية</div>
+      <p class="footer-note" style="margin-top: 1.4rem">
+        © 2025 Sabilur Rashad for Memorization &amp; Islamic Studies. All rights
+        reserved.
+      </p>
+      <p class="footer-note" style="margin-top: 0.4rem; font-style: italic">
+        وَمَن يَتَّقِ ٱللَّهَ يَجْعَل لَّهُۥ مَخْرَجًا — "Whoever has taqwa of
+        Allah, He will make a way out for him." (65:2)
+      </p>
+      <p class="footer-note" style="margin-top: 0.4rem">
+        Address: No. 6, Garun Kurama Road, (Layin Tambuwal) Unguwar Shanu,
+        Kaduna.
+      </p>
+    </footer>
+
+    <script>
+      // Scroll-triggered fade-in
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+
+      // Sticky nav shadow on scroll
+      const nav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        nav.style.boxShadow =
+          window.scrollY > 20 ? "0 4px 24px rgba(0,0,0,0.35)" : "none";
+      });
+
+      // Form handler — opens mailto as fallback
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById("fname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject =
+          document.getElementById("subject").value.trim() ||
+          "Enquiry from website";
+        const msg = document.getElementById("message").value.trim();
+
+        if (!name || !email || !msg) {
+          const fb = document.getElementById("form-feedback");
+          fb.style.color = "#b44";
+          fb.textContent = "Please fill in your name, email, and message.";
+          fb.style.display = "block";
+          return;
+        }
+
+        const body = `Name: ${name}\nEmail: ${email}\n\n${msg}`;
+        const mailto = `mailto:Sabilurrashad3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+
+        const fb = document.getElementById("form-feedback");
+        fb.style.color = "var(--green-mid)";
+        fb.textContent = "Opening your email app… JazakAllahu khairan.";
+        fb.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
