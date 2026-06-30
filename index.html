@@ -13,7 +13,7 @@
 
     <style>
       * {
-        /* outline: 1px solid red; */
+        outline: 1px solid red;
       }
 
       *,
@@ -744,6 +744,63 @@
         transform: none;
       }
 
+      /* Gallery Section */
+      .gallery-section {
+        background: var(--parchment);
+        padding: 90px 5%;
+      }
+
+      .gallery-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 3rem auto 0;
+      }
+
+      .gallery-card {
+        overflow: hidden;
+        border-radius: 3px;
+        background: var(--white);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-card:hover {
+        transform: scale(1.03);
+      }
+
+      .gallery-image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Only for the first image */
+      .gallery-image-top {
+        object-position: 0 -55px;
+      }
+
+      /*  */
+      #see-more {
+        display: block;
+        margin: 2rem auto;
+        padding: 0.75rem 1.5rem;
+        background: var(--green-mid);
+        color: var(--white);
+        border: none;
+        border-radius: 3px;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
       /* ── RESPONSIVE ── */
       @media (max-width: 800px) {
         .nav-links {
@@ -961,11 +1018,8 @@
 
     <!-- Gallary -->
     <!-- ── GALLERY ── -->
-    <section
-      id="gallery"
-      style="background: var(--parchment); padding: 90px 5%"
-    >
-      <div style="max-width: 1100px; margin: 0 auto">
+    <section id="gallery" class="gallery-section">
+      <div class="gallery-container">
         <span class="section-eyebrow">School Environment</span>
         <h2 class="section-title fade-up">A glimpse of our community</h2>
         <p class="section-body fade-up">
@@ -973,152 +1027,103 @@
         </p>
       </div>
 
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 1.5rem;
-          max-width: 1100px;
-          margin: 3rem auto 0;
-        "
-      >
-        <div
-          class="fade-up"
-          style="
-            overflow: hidden;
-            border-radius: 3px;
-            background: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-          "
-        >
+      <div class="gallery-grid">
+        <div class="gallery-card fade-up">
           <img
-            src="./images/WhatsApp Image 2026-06-29 at 10.13.48 PM (1).jpeg"
-            alt="Gallery image 1"
-            style="
-              width: 100%;
-              height: 240px;
-              object-fit: cover;
-              display: block;
-            "
+            src="./images/11.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
           />
         </div>
-        <div
-          class="fade-up"
-          style="
-            overflow: hidden;
-            border-radius: 3px;
-            background: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-          "
-          onmouseover="this.style.transform = 'scale(1.03)'"
-          onmouseout="this.style.transform = 'scale(1)'"
-        >
+
+        <div class="gallery-card fade-up">
           <img
-            src="./images/WhatsApp Image 2026-06-29 at 10.13.48 PM.jpeg"
-            alt="Gallery image 2"
-            style="
-              width: 100%;
-              height: 240px;
-              object-fit: cover;
-              display: block;
-            "
+            src="./images/1.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
           />
         </div>
-        <div
-          class="fade-up"
-          style="
-            overflow: hidden;
-            border-radius: 3px;
-            background: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-          "
-          onmouseover="this.style.transform = 'scale(1.03)'"
-          onmouseout="this.style.transform = 'scale(1)'"
-        >
+
+        <div class="gallery-card fade-up">
           <img
-            src="./images/WhatsApp Image 2026-06-29 at 10.13.49 PM (1).jpeg"
-            alt="Gallery image 3"
-            style="
-              width: 100%;
-              height: 240px;
-              object-fit: cover;
-              display: block;
-            "
+            src="./images/5.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
           />
         </div>
-        <div
-          class="fade-up"
-          style="
-            overflow: hidden;
-            border-radius: 3px;
-            background: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-          "
-          onmouseover="this.style.transform = 'scale(1.03)'"
-          onmouseout="this.style.transform = 'scale(1)'"
-        >
+        <div class="gallery-card fade-up">
           <img
-            src="./images/WhatsApp Image 2026-06-29 at 10.13.49 PM (2).jpeg"
-            alt="Gallery image 4"
-            style="
-              width: 100%;
-              height: 240px;
-              object-fit: cover;
-              display: block;
-            "
+            src="./images/12.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
           />
         </div>
-        <div
-          class="fade-up"
-          style="
-            overflow: hidden;
-            border-radius: 3px;
-            background: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-          "
-          onmouseover="this.style.transform = 'scale(1.03)'"
-          onmouseout="this.style.transform = 'scale(1)'"
-        >
+
+        <div class="gallery-card fade-up">
           <img
-            src="./images/WhatsApp Image 2026-06-29 at 10.13.49 PM (3).jpeg"
-            alt="Gallery image 5"
-            style="
-              width: 100%;
-              height: 240px;
-              object-fit: cover;
-              display: block;
-            "
+            src="./images/10.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
           />
         </div>
-        <div
-          class="fade-up"
-          style="
-            overflow: hidden;
-            border-radius: 3px;
-            background: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-          "
-          onmouseover="this.style.transform = 'scale(1.03)'"
-          onmouseout="this.style.transform = 'scale(1)'"
-        >
+
+        <div class="gallery-card fade-up">
           <img
-            src="./images/WhatsApp Image 2026-06-29 at 10.13.49 PM.jpeg"
-            alt="Gallery image 6"
-            style="
-              width: 100%;
-              height: 240px;
-              object-fit: cover;
-              display: block;
-            "
+            src="./images/6.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
+          />
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img
+            src="./images/7.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
+          />
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img
+            src="./images/8.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
+          />
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img
+            src="./images/9.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
+          />
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img
+            src="./images/3.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
+          />
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img
+            src="./images/2.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
+          />
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img
+            src="./images/4.jpeg"
+            alt="Gallery image"
+            class="gallery-image gallery-image-top"
           />
         </div>
       </div>
+      <button id="see-more">See More</button>
     </section>
 
     <!-- ── VALUES ── -->
@@ -1298,7 +1303,10 @@
             </div>
             <div>
               <h4>Location</h4>
-              <p>Nigeria — contact us for the full address</p>
+              <p>
+                Nigeria — Address: No. 6, Garun Kurama Road, (Layin Tambuwal)
+                Unguwar Shanu, Kaduna.
+              </p>
             </div>
           </div>
         </div>
@@ -1459,6 +1467,41 @@
         fb.textContent = "Opening your email app… JazakAllahu khairan.";
         fb.style.display = "block";
       }
+
+      const seeMore = document.getElementById("see-more");
+      const images = document.querySelectorAll(".gallery-card");
+
+      // console.log(images);
+      let hideIt = true;
+
+      for (let index = 0; index < images.length; index++) {
+        const element = images[index];
+        if (index > 5) {
+          element.style.display = "none";
+        }
+      }
+
+      seeMore.addEventListener("click", () => {
+        hideIt = !hideIt;
+        if (hideIt) {
+          seeMore.textContent = "See More";
+        } else {
+          seeMore.textContent = "See Less";
+        }
+        // alert(hideIt);
+        for (let index = 0; index < images.length; index++) {
+          const element = images[index];
+          if (hideIt === true) {
+            if (index > 5) {
+              element.style.display = "none";
+            }
+          } else {
+            if (index > 5) {
+              element.style.display = "block";
+            }
+          }
+        }
+      });
     </script>
   </body>
 </html>
